@@ -92,7 +92,7 @@
   <div class="form-field">
     <p class="form-label ">Коментар</p>
     <label class="form-item feedback" >
-    <textarea rows="5" placeholder="Введіть текст"></textarea>
+    <textarea class="textarea" rows="5" placeholder="Введіть текст"></textarea>
   </label>
 </div>     
   <div class="form-field">
@@ -392,14 +392,15 @@
             </li>
           </ul>
         </div>
-      <div class="footer-input">
+      <div class="footer-field">
         <h2 class="subscribe">Підпишіться на розсилку</h2>
         <form  class="email"> 
-          <!-- <label for="mail">E-mail</label> -->
-          <input type="email" placeholder="E-mail" id="mail"/>
+          <label class="footer-label">
+          <input class="footer-input" type="email" placeholder="E-mail" id="mail"/>
         </form>
         <button class="footer-button" type="submit">Підписатися</button>
-      </div>
+      </label>
+    </div>
       </div>
     </footer>
   <script src="./js/modal.js"></script>
