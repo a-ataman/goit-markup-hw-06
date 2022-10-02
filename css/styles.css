@@ -338,6 +338,12 @@ color: #757575;
   left: 12px;
   transform: translateY(+165%);
 }
+/* .checkbox .checked{
+  opacity:0;
+}
+ .checkbox .unchecked{
+  opacity: 1;
+} */
 .form-field textarea::placeholder{
 font-style: normal;
 font-weight: 400;
@@ -380,6 +386,12 @@ background-color: var(--accent-color);
 background-size: contain;
 border: transparent;
 background-image: url(/images/icon-check.svg);
+}
+.checkbox:checked + .unchecked{
+opacity: 0;
+}
+.checkbox:checked + .checked{
+  opacity: 1;
 }
 .form-button{
   height: 50px;
@@ -863,8 +875,9 @@ width: 24px;
 height: 24px;
 background-repeat: no-repeat;
 background-position: center;
-/* background-color: var(--accent-color); */
-background-image: url("../images/icon-send.svg");
+background-size: contain;
+/* background-color: tomato; */
+background-image: url(../images/icon-send.svg);
 }
 .footer-button-text{
 font-family: 'Roboto';
@@ -872,8 +885,5 @@ font-style: normal;
 font-weight: 700;
 font-size: 16px;
 line-height: 30px;
-display: flex;
-align-items: center;
-text-align: center;
 letter-spacing: 0.06em;
 color: #FFFFFF;}
