@@ -5,6 +5,7 @@
   --contrast-color: #ffffff;
   --background-color: #ffffff;
   --icon-color:#AFB1B8;
+  --animation-fill: fill 5550ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .visually-hidden {
   position: absolute;
@@ -235,17 +236,14 @@ border-radius: 2px;
 }
 .modal{
   position: absolute;
-  display: flex;
-  flex-direction: column;
   top: 50%; 
   left: 50%;
 transform: translate(-50%, -50%); 
 width: 528px;
-height: 581px;
 border-radius: 4px;
 background-color: var(--background-color);
 transition-property: transform;
-  transition-duration: 7550ms;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
@@ -254,19 +252,17 @@ transition-property: transform;
   visibility:hidden;
 }
 .modal .button-close{
-  position: relative;
   position: absolute;
   align-items: center;
-top: 0;
-right: 0;
-margin-top: 8px;
-margin-right: 8px;
+top: 8px;
+right: 8px;
 width: 30px;
 height: 30px;
 border-radius: 50%;
 background: #FFFFFF;
 border: 1px solid rgba(0, 0, 0, 0.1);
 cursor: pointer;
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-close-icon{
   position: absolute;
@@ -289,9 +285,9 @@ letter-spacing: 0.03em;
 color: var(--primery-color);
 }
 .form{
-  margin: 40px;
   display: flex;
   flex-direction: column;
+  padding: 40px;
 }
 .form-field input{
    padding-left: 42px;
@@ -301,14 +297,13 @@ height: 40px;
 border: 1px solid rgba(33, 33, 33, 0.2);
 border-radius: 4px;
 outline: transparent;
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-input:hover,
 .form-input:focus,
-.textarea:focus, .textarea:hover
+.textarea:focus
 {
   border-color:#2196F3; 
 }
-
  .form-input:focus + .form-icon {
   fill:var(--accent-color);
 }
@@ -337,13 +332,8 @@ color: #757575;
   top: 0;
   left: 12px;
   transform: translateY(+165%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* .checkbox .checked{
-  opacity:0;
-}
- .checkbox .unchecked{
-  opacity: 1;
-} */
 .form-field textarea::placeholder{
 font-style: normal;
 font-weight: 400;
@@ -364,8 +354,9 @@ outline: transparent;
 .form-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
+/* checkbox */
 .checkbox-fill{
 font-style: normal;
 font-weight: 400;
@@ -373,25 +364,34 @@ font-size: 14px;
 line-height: 24px;
 letter-spacing: 0.03em;
 color: #757575;}
+.agreement{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .checkbox-icons{
   display: inline-block;
   margin-right: 10px;
-  background-repeat: 4px;
+  border-radius: 4px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.checkbox{
-  position: absolute;
+.checked{
+  opacity: 0;
 }
-.checkbox:checked + .checkbox-icons {
-background-color: var(--accent-color);
-background-size: contain;
-border: transparent;
-background-image: url(/images/icon-check.svg);
-}
-.checkbox:checked + .unchecked{
-opacity: 0;
-}
-.checkbox:checked + .checked{
+.unchecked{
   opacity: 1;
+}
+.checkbox-input:checked + .checkbox-icons .checked{
+opacity: 1;
+}
+.checkbox-input:checked + .checkbox-icons .unchecked{
+opacity: 0;
 }
 .form-button{
   height: 50px;
@@ -788,6 +788,7 @@ transition-property: transform;
   background-color: #2f303a;
   padding-top: 60px;
   padding-bottom: 60px;
+  
 }
 .footer .logo-studio {
   color: var(--contrast-color);
@@ -819,11 +820,11 @@ margin-bottom: 20px;
 .container-footer {
   display: flex;
  align-items: baseline;
-}
+justify-content: space-between;}
 .footer-social{
   display: flex;
 flex-direction: column;
-  margin-left: 70px;
+  /* margin-left: 70px; */
 }
 .footer-label{
   display: flex;
@@ -854,13 +855,14 @@ cursor: pointer;
 .footer-field{
   display: flex;
   flex-direction: column;
-  margin-left: 93px;
+  /* margin-left: 93px; */
   bottom: 0;
 }
 .footer-input{
   padding: 15px 16px;
   width: 358px;
   height: 50px;
+  color: var(--contrast-color);
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid rgba(255, 255, 255, 0.3);
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
